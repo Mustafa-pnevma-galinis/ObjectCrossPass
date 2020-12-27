@@ -1,0 +1,44 @@
+public class Circle {
+    //Required: Calculating the radius of circle inscribed in square...
+
+    private double radius;
+    Circle(int radius) {
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    //what if we rather implemented set method so what difference between both...
+    public void setRadius(int radius){             //as the constructor method <What difference ?>
+        this.radius = radius;
+    }
+    /*Hypotenuse equals {Square Root of (radius <Squared> x 2)}*/
+
+    public static void main (String [] args){
+
+    }
+
+}
+
+
+
+public class Square {
+    public static double hypotenuse;
+    public double calcHypo (Circle c){
+        hypotenuse = Math.pow(Math.pow(c.getRadius(),2)*2 ,0.5);
+        return hypotenuse;
+    }
+    public void printGot () {
+        System.out.println("Hypotenuse: " + Math.round(hypotenuse) + " cm");
+    }
+    public static void main(String [] args){
+        /*Circle c = new Circle(5);
+        c.setRadius(5);*/
+        Circle c = new Circle(5);
+        Square x = new Square();
+        x.calcHypo(c);
+        x.printGot();
+    }
+}
